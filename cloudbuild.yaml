@@ -1,4 +1,8 @@
 steps:
-- name: 'gcr.io/cloud-builders/gradle'
-  args: ['build']
-- name: 'gcr.io/cloud-builders/gradlewImage'
+- name: 'docker'
+  args: ['tag',
+    'gcr.io/$PROJECT_ID/myimage:oldtag',
+    'gcr.io/$PROJECT_ID/myimage:newtag']
+images: ['gcr.io/$PROJECT_ID/myimage:newtag']
+- name: 'docker'
+  args: ['run', 'gcr.io/$PROJECT_ID/myimage']
