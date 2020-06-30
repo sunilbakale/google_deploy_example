@@ -1,3 +1,3 @@
 FROM openjdk:8-jdk
-ADD googleService-1.war googleService-1.war
-CMD ["java", "-jar", "googleService-1.war"]
+ADD build/libs/gs-spring-boot-0.1.0.jar gs-spring-boot-0.1.0.jar
+CMD ["java", "-jar", "gs-spring-boot-0.1.0.jar"]
