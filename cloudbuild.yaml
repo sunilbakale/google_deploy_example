@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gradle'
   args: ['build']
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/gradlew'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/gradale_image', '.']
 images: ['gcr.io/$PROJECT_ID/gradale_image']
